@@ -1,39 +1,13 @@
-// /* By Athlon Front-End Team */
-
-// /* Core variables */
-// @import 'base/vars';
-
-// /* CSS Reset */
-// @import 'base/reset';
-
-// /* CSS print */
-// @import 'base/print';
-
-// /* Fonts */
-// @import 'base/fonts';
-
-// /* Mixins, helpers and functions */
-// @import 'base/mixins';
-
-// /* Vendor */
-
-// /* Components */
-
-// /* Browser specific styles */
-// @import 'dirty/hacks';
-
-// /* Demo styles */
-
 @import 'null';
+@import 'modals';
+@import 'colors';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
-
-$purple: #5F62AC;
 
 body {
   font-family: Roboto;
   font-size: 14px;
-}
+} 
 
 .wrapper {
   min-height: 100%;
@@ -84,7 +58,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 8px 24px;
-    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   &__logo {
@@ -121,7 +95,7 @@ body {
       background-color: #4A439D;
       width: 100%;
       padding: 32px 0;
-      transition-duration: 0.5s;
+      transition: all 0.3s ease-out;
 
       &.active {
         left: 0;
@@ -144,12 +118,12 @@ body {
       width: 0px;
       height: 2px;
       background-color: transparent;
-      transition-duration: 0.3s;
+      transition: all 0.3s ease-out;
     }
 
     &:hover:after {
       width: 100%;
-      background-color: #F0C630;
+      background-color: $yellow;
     }
 
     @media (max-width: 689px) {
@@ -170,14 +144,14 @@ body {
     opacity: 1;
     background-color: $purple;
     background-image: url('../images/content/burger.svg');
-    transition: background 0.5s ease;
+    transition: all 0.3s ease-out;
 
     @media (max-width: 575px) {
       display: flex;
     }
 
     &.active {
-      background: #F0C630;
+      background: $yellow;
       background-image: url('../images/content/burger_close.svg');
     }
   }
@@ -302,7 +276,7 @@ body {
     width: 12px;
     height: 12px;
     background: rgb(255, 255, 255);
-    transition-duration: 0.2s;
+    transition: all 0.3s ease-out;
     opacity: 0.3;
     margin: 48px 0;
 
@@ -343,7 +317,7 @@ body {
     line-height: 28px;
     background: #E5E5E5;
     cursor: pointer;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-out;
 
     &.active {
       background: #fff;
@@ -351,12 +325,14 @@ body {
     }
 
     &:hover {
-      border: 1px solid #F0C630;
+      border: 1px solid $yellow;
     }
 
     @media (max-width: 575px) {
       font-size: 16px;
       line-height: 24px;
+      padding: 8px 24px;
+      font-size: 16px;
     }
   }
 
@@ -385,6 +361,10 @@ body {
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 16px;
     }
   }
 
@@ -450,10 +430,10 @@ body {
     border: 1px solid #fff;
     border-radius: 4px;
     cursor: pointer;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-out;
 
     &:hover {
-      border: 1px solid #F0C630;
+      border: 1px solid $yellow;
     }
 
     @media (max-width: 767px) {
@@ -529,6 +509,12 @@ body {
     line-height: 24px;
     color: $purple;
     border-bottom: 1px dashed $purple;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+
+    &:hover{
+      border-bottom: 1px dashed transparent;
+    }
   }
 
   &__metro-time {
@@ -586,7 +572,7 @@ body {
     z-index: 40;
     border: 1px solid #fff;
     cursor: pointer;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-out;
     z-index: 30;
 
     @media (max-width: 575px) {
@@ -596,7 +582,7 @@ body {
     }
 
     &:hover {
-      border: 1px solid #F0C630;
+      border: 1px solid $yellow;
     }
 
     &.active {
@@ -607,7 +593,7 @@ body {
 
     & img {
       margin-top: 6px;
-      transition-duration: 0.5s;
+      transition: all 0.3s ease-out;
       transform: rotate(180deg);
     }
 
@@ -627,7 +613,7 @@ body {
     position: absolute;
     bottom: -120%;
     left: 0;
-    transition-duration: 0.5s;
+    transition: all 0.3s ease-out;
 
     &.active {
       bottom: 0;
@@ -763,7 +749,7 @@ body {
   }
 
   &__pic-img {
-    transition-duration: 0.5s;
+    transition: all 0.3s ease-out;
   }
 
   &__bckg {
@@ -805,7 +791,7 @@ body {
     padding: 4px 12px 4px 30px;
     background: #000000;
     opacity: 0;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-out;
   }
 
   &__pic-title {
@@ -831,7 +817,7 @@ body {
     margin-top: 16px;
     font-size: 20px;
     line-height: 28px;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-out;
     cursor: pointer;
 
     &:hover {
@@ -908,7 +894,7 @@ body {
 
   &__input {
     width: 100%;
-    border-bottom: 1px solid #F0C630;
+    border-bottom: 1px solid $yellow;
     background-color: $purple;
     font-family: Roboto;
     font-size: 16px;
@@ -1063,7 +1049,7 @@ body {
 
   &__title-pic {
     display: none;
-    transition-duration: 0.2s;
+    transition: all 0.3s ease-out;
 
     @media (max-width: 575px) {
       display: flex;
@@ -1091,7 +1077,7 @@ body {
     opacity: 0.5;
     margin-bottom: 8px;
     cursor: pointer;
-    transition: 0.3s linear;
+    transition: all 0.3s ease-out;
 
     &:hover {
       color: $purple;
