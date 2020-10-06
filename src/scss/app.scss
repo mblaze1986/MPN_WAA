@@ -758,6 +758,7 @@ body {
 
       &:hover~.more__discount {
         opacity: 0.6;
+        transform: scaleX(1);
       }
     }
   }
@@ -773,6 +774,8 @@ body {
     padding: 4px 12px 4px 30px;
     background: #000000;
     opacity: 0;
+    transform: scaleX(0);
+    transform-origin: 0 0;
     transition: all 0.3s ease-out;
   }
 
@@ -842,6 +845,7 @@ body {
 
   &__body {
     background-color: $purple;
+    position: relative;
 
     &--modal {
       background-color: #fff;
@@ -914,6 +918,13 @@ body {
       @media (max-width: 575px) {
         width: 100%;
       }
+
+      &--modal {
+        @media (max-width: 575px) {
+          padding: 12px 0px;
+          margin-top: 12px;
+        }
+      }
     }
 
     &.check {
@@ -923,6 +934,11 @@ body {
     &--modal {
       background-color: #FFFFFF;
       color: #000;
+
+      @media (max-width: 575px) {
+        padding: 12px 0px;
+        margin-top: 12px;
+      }
 
       & span {
         color: #000;
@@ -1014,11 +1030,139 @@ body {
     font-size: 20px;
     line-height: 28px;
     color: $purple;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &--modal {
       background: $purple;
       color: #FFFFFF;
+      width: 100%;
+      padding: 8px 0;
     }
+  }
+
+  &__success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $purple;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+
+    @media (max-width: 1199px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &.hidden {
+      transform: scale(0);
+    }
+
+    &--modal {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  &__success-pic {
+    position: relative;
+    margin-left: 168px;
+
+    @media (max-width: 1199px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 767px) {
+      margin-left: 27px;
+    }
+
+    &--modal {
+      margin-left: 96px;
+
+      @media (max-width: 1199px) {
+        margin-left: 27px;
+      }
+    }
+  }
+
+  &__round {
+
+    & img {
+      @media (max-width: 767px) {
+        width: 142px;
+        height: 142px;
+      }
+    }
+
+  }
+
+  &__tick {
+    position: absolute;
+    top: 5%;
+    right: -5%;
+
+    & img {
+      @media (max-width: 767px) {
+        width: 116px;
+        height: 83px;
+      }
+    }
+  }
+
+  &__message {
+    margin-left: 50px;
+    color: #FFFFFF;
+
+    @media (max-width: 767px) {
+      margin-left: 24px;
+      margin-top: 24px;
+    }
+
+    &--modal {
+      margin-top: 48px;
+      margin-left: 96px;
+
+      @media (max-width: 1199px) {
+        margin-left: 27px;
+      }
+    }
+  }
+
+  &__message-title {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &--modal {
+      @media (max-width: 991px) {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__message-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 24px;
   }
 }
 

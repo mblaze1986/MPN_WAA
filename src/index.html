@@ -21,10 +21,10 @@
         <div class="header__body">
           <div class="header__logo"><img src="images/content/logo.svg" alt=""></div>
           <nav class="header__nav" id="nav">
-            <li><a href="" class="header__link">Описание</a></li>
-            <li><a href="" class="header__link">Локация</a></li>
-            <li><a href="" class="header__link">Смотрите также</a></li>
-            <li><a href="" data-modal="#modal_checkview" class="header__link">Запись на просмотр</a></li>
+            <li><a href="#" class="header__link">Описание</a></li>
+            <li><a href="#" class="header__link">Локация</a></li>
+            <li><a href="#" class="header__link">Смотрите также</a></li>
+            <li><a href="#" data-modal="#modal_checkview" class="header__link">Запись на просмотр</a></li>
           </nav>
           <div class="header__burger" id="burger"></div>
         </div>
@@ -263,19 +263,6 @@
         <form class="backform__form" action="#" method="post" enctype="multipart/form-data">
           <div class="backform__title">Запишитесь на просмотр и оцените всё сами!</div>
           <input class="backform__input" type="name" name="name" placeholder="Как вас зовут">
-          <!-- <select class="select-css backform__input half">
-            <option><span>16 сентября</span></option>
-            <option>17 сентября</option>
-            <option>18 сентября</option>
-            <option>19 сентября</option>
-            <option>20 сентября</option>
-          </select>
-          <select class="select-css backform__input half">
-            <option>12:00</option>
-            <option>14:00</option>
-            <option>16:00</option>
-            <option>18:00</option>
-          </select> -->
           <div class="backform__input half">
             <div class="backform__collapse-button">16 сентября<span>&#9660;</span></div>
             <ul class="backform__collapse-list hidden">
@@ -301,8 +288,18 @@
           <div class="backform__input check">
             <input type="checkbox" class="custom-checkbox remindform" id="remindform" name="remindform" value="yes"><label for="remindform"><span>Напомните мне за 2 часа до визита</span></label>
           </div>
-          <button class="backform__btn" type="submit">Отправить</button>
+          <button class="backform__btn" type="submit" data-success="#success">Отправить</button>
         </form>
+        <div class="backform__success hidden" id="success">
+          <div class="backform__success-pic">
+            <div class="backform__round"><img src="images/content/form_round.svg" alt=""></div>
+            <div class="backform__tick"><img src="images/content/form_tick.svg" alt=""></div>
+          </div>
+          <div class="backform__message">
+            <div class="backform__message-title">Вы успешно записались<br>на просмотр в ЖК Headliner!</div>
+            <div class="backform__message-subtitle">Мы ждем вас 16 сентября в 16:00</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -352,7 +349,18 @@
   </div><!-- wrapper -->
 
   <div class="modal" id="modal_checkview">
-    <div class="modal__bckg"></div>
+    <div class="modal__bckg">
+      <div class="backform__success  backform__success--modal hidden" id="modsuccess">
+        <div class="backform__success-pic  backform__success-pic--modal">
+          <div class="backform__round"><img src="images/content/form_round.svg" alt=""></div>
+          <div class="backform__tick"><img src="images/content/form_tick.svg" alt=""></div>
+        </div>
+        <div class="backform__message  backform__message--modal">
+          <div class="backform__message-title  backform__message-title--modal">Вы успешно записались<br>на просмотр в ЖК Headliner!</div>
+          <div class="backform__message-subtitle">Мы ждем вас 16 сентября в 16:00</div>
+        </div>
+      </div>
+    </div>
     <button class="modal__close" type="button" data-close><img src="images/content/modal_close.svg" alt=""></button>
     <div class="modal__body">
       <div class="modal__content">
@@ -360,20 +368,7 @@
           <form class="backform__form  backform__form--modal" action="#" method="post" enctype="multipart/form-data">
             <div class="backform__title  backform__title--modal">Запись на просмотр</div>
             <input class="backform__input  backform__input--modal" type="name" name="name" placeholder="Как вас зовут">
-            <!-- <select class="select-css  select-css--modal backform__input half">
-              <option><span>16 сентября</span></option>
-              <option>17 сентября</option>
-              <option>18 сентября</option>
-              <option>19 сентября</option>
-              <option>20 сентября</option>
-            </select>
-            <select class="select-css  select-css--modal backform__input half">
-              <option>12:00</option>
-              <option>14:00</option>
-              <option>16:00</option>
-              <option>18:00</option>
-            </select> -->
-            <div class="backform__input backform__input--modal half">
+            <div class="backform__input  backform__input--modal half  half--modal">
               <div class="backform__collapse-button">16 сентября<span>&#9660;</span></div>
               <ul class="backform__collapse-list hidden">
                 <li class="backform__collapse-clause">16 сентября</li>
@@ -384,7 +379,7 @@
                 <li class="backform__collapse-clause">21 сентября</li>
               </ul>
             </div>
-            <div class="backform__input  backform__input--modal half">
+            <div class="backform__input  backform__input--modal half  half--modal">
               <div class="backform__collapse-button">14:00<span>&#9660;</span></div>
               <ul class="backform__collapse-list hidden">
                 <li class="backform__collapse-clause">12:00</li>
@@ -398,7 +393,7 @@
             <div class="backform__input check  backform__input--modal">
               <input type="checkbox" class="custom-checkbox modalremindform" id="modalremindform" name="modalremindform" value="yes"><label for="modalremindform"><span>Напомните мне за 2 часа до визита</span></label>
             </div>
-            <button class="backform__btn  backform__btn--modal" type="submit">Отправить</button>
+            <button class="backform__btn  backform__btn--modal" type="submit"  data-modsuccess="#modsuccess">Отправить</button>
           </form>
         </div>
       </div>

@@ -68,7 +68,22 @@ $(document).ready(function () {
     $("body").removeClass('no-scroll');
   });
 
+  let successCall = $("[data-success]");
+  successCall.on("click", function (event) {
+    event.preventDefault();
+    let successId = $(this).data('success');
 
+    $(successId).removeClass('hidden');
+  });
+
+  let modalSuccessCall = $("[data-modsuccess]");
+  modalSuccessCall.on("click", function (event) {
+    event.preventDefault();
+    let modalSuccessId = $(this).data('modsuccess');
+
+    $(modalSuccessId).removeClass('hidden');
+    $(".modal__body").addClass('hidden');
+  });
 
   $("[data-slider]").slick({
     arrows: false,
