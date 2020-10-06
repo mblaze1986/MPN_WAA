@@ -1,8 +1,7 @@
 @import 'colors';
 
 .modal {
-  display: none;
-  // display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -12,10 +11,17 @@
   left: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.9);
-  // overflow: auto;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all 0.3s ease-out;
+
 
   @media (max-width: 575px) {
     align-items: flex-start;
+  }
+
+  &.show {
+    transform: scaleY(1);
   }
 
   &__bckg {
@@ -38,6 +44,11 @@
     right: 0;
     cursor: pointer;
     z-index: 2000;
+    transition: all 0.3s ease-out;
+
+    &:hover{
+      opacity: 0.6;
+    }
 
     & img {
       @media (max-width: 575px) {
@@ -49,6 +60,8 @@
 
   &__body {
     z-index: 1500;
+    // transform: scale(0);
+    // transition: all 0.3s ease-out;
 
     @media (max-width: 575px) {
       padding: 69px 16px;
@@ -61,6 +74,9 @@
     width: 100%;
     padding: 48px;
 
+    @media (max-width: 575px) {
+      padding: 32px;
+    }
   }
 
   &__title {
